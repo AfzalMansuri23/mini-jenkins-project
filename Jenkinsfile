@@ -24,7 +24,7 @@ pipeline {
 
     stage('Checkout') {
       steps {
-        git url: 'https://github.com/your-github-username/mini-jenkins-project.git', branch: 'main'
+        git url: 'https://github.com/AfzalMansuri23/mini-jenkins-project.git', branch: 'main'
       }
     }
 
