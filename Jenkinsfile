@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  tools{
+    maven 'mymaven'
+  }
 
   parameters {
     choice(name: 'DEPLOY_ENV', choices: ['dev', 'staging', 'prod'], description: 'Select deployment environment')
