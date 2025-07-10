@@ -9,11 +9,11 @@ pipeline {
   }
 
   environment {
-    MVN_CMD = "mvn"
-    SONARQUBE_SERVER = 'mysonar'
-    SONAR_PROJECT_KEY = 'mini-jenkins-project'
-    SLACK_CHANNEL = '#all-slack-demo'
-  }
+  SONAR_TOKEN = credentials('sonarcloud-token')
+  MVN_CMD = 'mvn'
+  SONARQUBE_SERVER = 'SonarCloud'
+  SLACK_CHANNEL = '#all-slack-demo'
+}
 
   options {
     timeout(time: 30, unit: 'MINUTES')
@@ -40,7 +40,13 @@ pipeline {
     stage('SonarQube Analysis') {
       steps {
         withSonarQubeEnv("${SONARQUBE_SERVER}") {
-          sh "${MVN_CMD} sonar:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY}"
+        sh """
+          ${MVN_CMD} sonar:sonar \
+          -Dsonar.projectKey=mini-jenkins-project \
+          -Dsonar.organization=afzalmansuri233 \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=${SONAR_TOKEN}
+         """
         }
       }
     }
