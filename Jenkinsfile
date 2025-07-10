@@ -9,8 +9,7 @@ pipeline {
   }
 
   environment {
-  SONAR_TOKEN = credentials('sonarcloud-token')
-  MVN_CMD = 'mvn'
+  SONAR_TOKEN = credentials('jenkinskey1')
   SONARQUBE_SERVER = 'SonarCloud'
   SLACK_CHANNEL = '#all-slack-demo'
 }
@@ -33,7 +32,7 @@ pipeline {
 
     stage('Build & Test') {
       steps {
-        sh "${MVN_CMD} clean package"
+        sh 'mvn clean package'
       }
     }
 
@@ -41,7 +40,7 @@ pipeline {
       steps {
         withSonarQubeEnv("${SONARQUBE_SERVER}") {
         sh """
-          ${MVN_CMD} sonar:sonar \
+          mvn sonar:sonar \
           -Dsonar.projectKey=mini-jenkins-project \
           -Dsonar.organization=afzalmansuri233 \
           -Dsonar.host.url=https://sonarcloud.io \
