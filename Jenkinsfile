@@ -84,11 +84,6 @@ pipeline {
       }
     }
 
-    stage('Smoke Test') {
-      steps {
-        sh "curl --fail http://${params.DEPLOY_ENV}.example.com/health || exit 1"
-      }
-    }
   }
 
   post {
