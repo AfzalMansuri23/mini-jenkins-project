@@ -1,4 +1,5 @@
-#!bin/bash
-echo "Starting DEV deployment"
+#!/bin/bash
+echo "✅ Deploying to Development Environment"
+echo "Simulating deployment steps..."
 sleep 3
-echo "DEV deployment completed successfully"
+echo "🚀 Deployment to Dev Complete!"

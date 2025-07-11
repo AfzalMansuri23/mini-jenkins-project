@@ -1,4 +1,5 @@
 #!/bin/bash
-echo "Starting PRODUCTION deployment..."
+echo "✅ Deploying to Production Environment"
+echo "Simulating deployment steps..."
 sleep 2
-echo "PROD deployment completed successfully."
+echo "🚀 Deployment to Production Complete!"

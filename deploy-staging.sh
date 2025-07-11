@@ -1,4 +1,5 @@
 #!/bin/bash
-echo "Starting STAGING deployment..."
+echo "✅ Deploying to Staging Environment"
+echo "Simulating deployment steps..."
 sleep 2
-echo "STAGING deployment completed successfully."
+echo "🚀 Deployment to staging Complete!"
