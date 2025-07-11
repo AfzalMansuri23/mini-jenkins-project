@@ -91,7 +91,7 @@ pipeline {
       slackSend(
         channel: "${SLACK_CHANNEL}",
         color: 'good',
-        message: "*SUCCESS*\nProject: `${env.JOB_NAME}`\nBuild: #${env.BUILD_NUMBER}\nEnvironment: *${params.DEPLOY_ENV}*"
+        message: ":rocket: *Build SUCCESSFUL!*\n*Project:* `${env.JOB_NAME}`\n*Build:* #${env.BUILD_NUMBER}\n*Environment:* `${params.DEPLOY_ENV}`\n:checkered_flag: *Status:* Success"
       )
       //archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
@@ -100,7 +100,7 @@ pipeline {
       slackSend(
         channel: "${SLACK_CHANNEL}",
         color: 'danger',
-        message: "*FAILURE*\nProject: `${env.JOB_NAME}`\nBuild: #${env.BUILD_NUMBER}\nEnvironment: *${params.DEPLOY_ENV}*"
+        message: ":x: *Build FAILED!*\n*Project:* `${env.JOB_NAME}`\n*Build:* #${env.BUILD_NUMBER}\n*Environment:* `${params.DEPLOY_ENV}`\n:warning: *Status:* Failed"
       )
     }
 
