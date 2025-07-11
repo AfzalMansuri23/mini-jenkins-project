@@ -93,7 +93,7 @@ pipeline {
         color: 'good',
         message: "*SUCCESS*\nProject: `${env.JOB_NAME}`\nBuild: #${env.BUILD_NUMBER}\nEnvironment: *${params.DEPLOY_ENV}*"
       )
-      archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+      //archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
 
     failure {
