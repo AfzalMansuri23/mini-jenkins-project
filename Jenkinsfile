@@ -10,7 +10,7 @@ pipeline {
 
   environment {
   SONAR_TOKEN = credentials('jenkinskey1')
-  SONARQUBE_SERVER = 'SonarCloud'
+  SONARQUBE_SERVER = 'mysonar'
   SLACK_CHANNEL = '#all-slack-demo'
 }
 
